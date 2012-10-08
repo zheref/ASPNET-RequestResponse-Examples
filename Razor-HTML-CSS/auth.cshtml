@@ -1,0 +1,16 @@
+﻿@{
+    if(IsPost)
+    {
+        var usuario = Request.Form["username"];
+        var contrasena = Request.Form["password"];
+
+        if(usuario == "zheref" && contrasena == "Altairis")
+        {
+            Response.Redirect("~/default");
+        }
+        else
+        {
+            Response.Redirect("~/logon");
+        }
+    }
+}
