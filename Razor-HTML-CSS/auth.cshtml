@@ -1,11 +1,13 @@
-﻿@{
+﻿@{    
     if(IsPost)
     {
         var usuario = Request.Form["username"];
         var contrasena = Request.Form["password"];
 
-        if(usuario == "zheref" && contrasena == "Altairis")
+        if(usuario == AuthData.USERNAME && contrasena == AuthData.PASSWORD)
         {
+            Session["username"] = usuario;
+            Session["password"] = contrasena;
             Response.Redirect("~/default");
         }
         else

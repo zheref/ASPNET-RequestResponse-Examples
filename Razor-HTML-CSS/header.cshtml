@@ -10,7 +10,7 @@
         <div class="float-right">
             <section id="login">
                 <ul id="login">
-                    @if(true)
+                    @if(AuthData.IsLogged(Session))
                     {
                         <li><a href="logoff.cshtml">Cerrar Sesion</a></li>
                     }
@@ -19,9 +19,9 @@
                         <li><a href="logon.cshtml">Iniciar Sesion</a></li>
                     }
                 </ul>
-                @if(true)
+                @if(AuthData.IsLogged(Session))
                 {
-                    var usuario = "Kurapika";
+                    var usuario = Session["username"];
                     <div class="welcomeMessage">Bienvenido, <strong>@usuario</strong></div>
                 }
                 else
